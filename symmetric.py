@@ -1,0 +1,12 @@
+n = int(input())
+A = set(map(int,input().split()[:n]))
+m = int(input())
+B = set(map(int,input().split()[:m]))
+# print(A)
+# print(B)
+a_diff = A.difference(B)
+b_diff = B.difference(A)
+out = a_diff.union(b_diff)
+out = sorted(out)
+for i in out:
+    print(i)
