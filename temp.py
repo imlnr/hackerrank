@@ -13,20 +13,23 @@ for _ in range(operations):
             print("Error: Set is empty")
 
     elif operation[0] == 'remove':
-        if len(operation) == 2:
-            element = int(operation[1])
-            sett.discard(element)
-        else:
+        if len(operation) != 2:
             print("Error: Invalid input")
+        else:
+            element = int(operation[1])
+            try:
+                sett.remove(element)
+            except KeyError:
+                print("Error: Element not found in set")
 
     elif operation[0] == 'discard':
-        if len(operation) == 2:
+        if len(operation) != 2:
+            print("Error: Invalid input")
+        else:
             element = int(operation[1])
             sett.discard(element)
-        else:
-            print("Error: Invalid input")
 
     else:
         print("Error: Invalid operation")
 
-    print(sett)
+print(sett[0])
